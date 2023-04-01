@@ -1,0 +1,110 @@
+/* Importing the Poppins font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300&display=swap');
+
+/* Apply default styling to all elements and use Poppins font */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Style the body element */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  flex-direction: column;
+  background: #1d2b3e;
+}
+
+/* Style the input box container */
+.input-box {
+  position: relative;
+  width: 280px;
+  margin: 20px 0;
+}
+
+/* Style the label inside the input box */
+.input-box label {
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  transform: translateY(-50%);
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.3);
+  padding: 0 5px;
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+/* Style the pseudo-element before the label */
+.input-box label::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 12px;
+  height: 12px;
+  background: transparent;
+  border-left: 1.8px solid #0080ff;
+  border-bottom: 1.8px solid #0080ff;
+  transform: rotate(45deg);
+  opacity: 0;
+  transition: .5s;
+}
+
+/* Style the pseudo-element after the label */
+.input-box label::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 12px;
+    height: 12px;
+    background: transparent;
+    border-right: 1.8px solid #0080ff;
+    border-top: 1.8px solid #0080ff;
+    transform: rotate(45deg);
+    opacity: 0;
+    transition: .5s;
+}
+
+/* Style the input field inside the input box */
+.input-box input {
+  width: 100%;
+  padding: 10px;
+  background: transparent;
+  border: 1.8px solid rgba(255, 255, 255, 0.3);
+  outline: none;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #fff;
+  transition: .5s;
+}
+
+/* Style the label when the input field is focused or has input */
+.input-box input:focus ~ label,
+.input-box input:valid ~ label {
+  top: 0;
+  left: 10px;
+  font-size: 11px;
+  background: #1d2b3e;
+  color: #0080ff;
+  padding: 0 12px;
+}
+
+/* Style the pseudo-elements when the input field is focused or has input */
+.input-box input:focus ~ label::before, 
+.input-box input:valid ~ label::before,
+.input-box input:focus ~ label::after, 
+.input-box input:valid ~ label::after {
+  top: 2.5px;
+  opacity: 1;
+}
+
+.input-box input:focus ,
+.input-box input:valid {
+ border: 1.8px solid #0080ff;   
+}
